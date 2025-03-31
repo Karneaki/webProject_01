@@ -1,0 +1,214 @@
+/* src/App.css */
+
+/* Reset básico e configuração de box-sizing */
+/* Remova a propriedade width do seletor universal */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Limita o tamanho geral do container para 90% da tela */
+.App {
+  width: 90vw;  /* 90% da largura da tela */
+  max-width: 900px;  /* Garante que não fique muito grande */
+  height: 90vh;  /* 90% da altura da tela */
+  max-height: 90vh;  /* Evita que ultrapasse a altura */
+  margin: auto;
+  padding: 20px;
+  background: #fff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;  /* Evita qualquer transbordamento */
+  display: flex;
+  flex-direction: column;
+}
+
+/* Garante que a lista não ultrapasse o tamanho do container */
+.project-list-container {
+  flex-grow: 1;  /* Faz com que a lista ocupe o espaço restante */
+  overflow-y: auto;
+  width: 100%;
+  max-height: 45vh;  /* Ajuste para evitar que tome toda a tela */
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  background: #f5f5f5;
+}
+
+
+/* Exemplo de container com Flexbox */
+.container-flex {
+  display: flex;
+  flex-wrap: wrap; /* Permite quebra de linha quando os itens ultrapassarem a largura */
+  gap: 10px;
+}
+
+.nav-tabs {
+  display: flex;
+  overflow-x: auto; /* Ativa barra de rolagem horizontal */
+  white-space: nowrap;
+}
+.nav-tabs button {
+  flex: 0 0 auto; /* Garante que os botões não encolham */
+}
+
+/* Caso tenha uma área de abas ou itens em linha */
+.tabs-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  overflow-x: auto;
+}
+
+/* Wrapper para controlar o layout da página */
+.content-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+html, body {
+  height: 100%;
+}
+
+/* Estilização do body */
+body {
+  width: 100%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f7f8fa;
+  color: #333;
+  line-height: 1.6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button-group {
+  width: 100%;
+  justify-content: space-between;
+  display: flex;
+  gap: 10px;  /* Espaçamento entre os botões */
+  justify-content: flex-start;  /* Alinha os botões à esquerda */
+  align-items: center;  /* Garante alinhamento vertical */
+}
+
+/* Cabeçalho */
+header {
+  width: 100%;
+  background-color: #3f51b5;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+  border-radius: 8px 8px 0 0;
+}
+
+header h1 {
+  font-size: 2rem;
+}
+
+/* Botões */
+button {
+  background-color: #3f51b5;
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin: 5px;
+  font-size: 1rem;
+}
+
+button:hover {
+  background-color: #303f9f;
+}
+
+/* Formulário */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin: 20px 0;
+}
+
+form div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+form label {
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+
+form input[type="text"],
+form textarea,
+form select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+form input[type="text"]:focus,
+form textarea:focus,
+form select:focus {
+  border-color: #3f51b5;
+  outline: none;
+}
+
+/* Lista de projetos */
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  background: #e8eaf6;
+  padding: 15px;
+  margin: 10px 0;
+  border-radius: 4px;
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+li:hover {
+  transform: translateY(-3px);
+}
+
+/* Título e status do projeto */
+li > strong {
+  font-size: 1.2rem;
+}
+
+li p {
+  font-size: 0.95rem;
+}
+
+/* Botões de ação dentro dos itens da lista */
+li button {
+  align-self: flex-start;
+  font-size: 0.9rem;
+}
+
+/* Responsividade */
+@media (max-width: 1200px) {
+  .App {
+    margin: 20px;
+    padding: 15px;
+  }
+  header h1 {
+    font-size: 1.5rem;
+  }
+  button {
+    font-size: 0.9rem;
+    padding: 8px 12px;
+  }
+}
